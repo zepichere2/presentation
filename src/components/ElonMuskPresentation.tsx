@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Play, Pause, RotateCcw, Maximize2 } from 'lucide-react';
-import { MissionTimeline } from '@/components/MissionTimeline';
 import { PresentationProps } from './presentation/types';
 import { SLIDES_DATA, PRESENTATION_CONFIG } from './presentation/constants';
 import { TitleSlide } from './presentation/slides/TitleSlide';
@@ -411,8 +410,25 @@ export function ElonMuskPresentation({ deviceInfo }: PresentationProps) {
         )}
       </AnimatePresence>
 
-      {/* Mission Timeline */}
-      <MissionTimeline currentIndex={currentSlide} total={SLIDES_DATA.length} />
+      {/* Progress Bar */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-1 bg-dark-gray-800 z-50"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <motion.div
+          className="h-full bg-gradient-to-r from-accent-red to-accent-red"
+          style={{
+            width: `${((currentSlide + 1) / SLIDES_DATA.length) * 100}%`
+          }}
+          initial={{ width: 0 }}
+          animate={{ 
+            width: `${((currentSlide + 1) / SLIDES_DATA.length) * 100}%` 
+          }}
+          transition={{ duration: 0.5 }}
+        />
+      </motion.div>
 
       {/* Slide Counter */}
       <motion.div

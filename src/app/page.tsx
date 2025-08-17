@@ -3,7 +3,6 @@
 import { ElonMuskPresentation } from '@/components/ElonMuskPresentation';
 import { useState, useEffect } from 'react';
 import { SpaceBackground } from '@/components/SpaceBackground';
-import { ConstellationLayer } from '@/components/ConstellationLayer';
 
 // Device detection and viewport utilities
 const useDeviceDetection = () => {
@@ -115,7 +114,6 @@ export default function App() {
   return (
     <div className={getContainerClasses()}>
       <SpaceBackground />
-      <ConstellationLayer />
       <main className="adaptive-main">
         <ElonMuskPresentation deviceInfo={deviceInfo} />
       </main>
