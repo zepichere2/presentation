@@ -150,15 +150,19 @@ export function WhoIsElonSlide({ isActive }: SlideProps) {
 
             {/* Portrait Image */}
             <motion.div
-              className="relative z-10 w-80 h-80 rounded-full overflow-hidden dark-glow-strong"
+              className="relative z-10 w-80 h-80 rounded-full overflow-hidden dark-glow-strong presentation-3d-card interactive-3d transform-3d"
+              animate={{ y: [0, -6, 0], rotateY: [0, 2, -2, 0], rotateX: [0, 1, -1, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               whileHover={{ 
-                scale: 1.05,
+                scale: 1.06,
+                rotateX: -4,
+                rotateY: 4,
                 rotateZ: 2,
                 boxShadow: "0 25px 50px rgba(220, 38, 38, 0.4)"
               }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1692659819033-683e4bdf096c?w=400&h=400&fit=crop"
+                src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society_%28crop2%29.jpg"
                 alt="Elon Musk Portrait"
                 className="w-full h-full object-cover"
               />
