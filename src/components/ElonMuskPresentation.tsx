@@ -12,7 +12,7 @@ import { ContributionsSlide } from './presentation/slides/ContributionsSlide';
 import { InspirationSlide } from './presentation/slides/InspirationSlide';
 import { ConclusionSlide } from './presentation/slides/ConclusionSlide';
 import { AchievementsSlide } from './presentation/slides/AchievementSlides';
-import { LeadershipSlide } from './presentation/slides/LeaderhipSlide';
+import { LeadershipSlide } from './presentation/slides/LeadershipSlide';
 
 
 export function ElonMuskPresentation({ deviceInfo }: PresentationProps) {
