@@ -2,6 +2,7 @@
 
 import { ElonMuskPresentation } from '@/components/ElonMuskPresentation';
 import { useState, useEffect } from 'react';
+import { SpaceBackground } from '@/components/SpaceBackground';
 
 // Device detection and viewport utilities
 const useDeviceDetection = () => {
@@ -100,7 +101,7 @@ export default function App() {
 
   // Adaptive container classes based on device
   const getContainerClasses = () => {
-    const baseClasses = 'min-h-screen dark relative bg-dark-gray-950';
+    const baseClasses = 'min-h-dvh dark relative bg-dark-gray-950';
     const deviceClasses = {
       mobile: 'mobile-container',
       tablet: 'tablet-container', 
@@ -112,7 +113,7 @@ export default function App() {
 
   return (
     <div className={getContainerClasses()}>
-      {/* Elon Musk Presentation */}
+      <SpaceBackground />
       <main className="adaptive-main">
         <ElonMuskPresentation deviceInfo={deviceInfo} />
       </main>

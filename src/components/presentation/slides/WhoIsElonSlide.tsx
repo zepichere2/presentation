@@ -12,17 +12,17 @@ export function WhoIsElonSlide({ isActive }: SlideProps) {
   ];
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+    <div className="relative w-full min-h-dvh flex items-center justify-center overflow-hidden">
       {/* Galaxy Background Effect */}
       <motion.div
         className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-dark-gray-950 to-dark-gray-900"
-        animate={isActive ? {
-          background: [
-            "radial-gradient(circle at 30% 50%, rgba(147, 51, 234, 0.2) 0%, #0A0A0A 50%)",
-            "radial-gradient(circle at 70% 50%, rgba(220, 38, 38, 0.2) 0%, #0A0A0A 50%)",
-            "radial-gradient(circle at 30% 50%, rgba(147, 51, 234, 0.2) 0%, #0A0A0A 50%)"
-          ]
-        } : {}}
+                  animate={isActive ? {
+            background: [
+              "radial-gradient(circle at 30% 50%, rgba(147, 51, 234, 0.20) 0%, rgba(10, 10, 10, 0.0) 60%)",
+              "radial-gradient(circle at 70% 50%, rgba(220, 38, 38, 0.20) 0%, rgba(10, 10, 10, 0.0) 60%)",
+              "radial-gradient(circle at 30% 50%, rgba(147, 51, 234, 0.20) 0%, rgba(10, 10, 10, 0.0) 60%)"
+            ]
+          } : {}}
         transition={{ duration: 6, repeat: Infinity }}
       />
 
@@ -48,6 +48,13 @@ export function WhoIsElonSlide({ isActive }: SlideProps) {
           />
         ))}
       </div>
+
+      {/* Bottom gradient to avoid hard edge on some mobile viewports */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24"
+        style={{
+          background: "linear-gradient(to top, rgba(10,10,10,1), rgba(10,10,10,0))"
+        }}
+      />
 
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-8 gap-12">
         {/* Left Content */}
@@ -150,15 +157,19 @@ export function WhoIsElonSlide({ isActive }: SlideProps) {
 
             {/* Portrait Image */}
             <motion.div
-              className="relative z-10 w-80 h-80 rounded-full overflow-hidden dark-glow-strong"
+              className="relative z-10 w-80 h-80 rounded-full overflow-hidden dark-glow-strong presentation-3d-card interactive-3d transform-3d"
+              animate={{ y: [0, -6, 0], rotateY: [0, 2, -2, 0], rotateX: [0, 1, -1, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               whileHover={{ 
-                scale: 1.05,
+                scale: 1.06,
+                rotateX: -4,
+                rotateY: 4,
                 rotateZ: 2,
                 boxShadow: "0 25px 50px rgba(220, 38, 38, 0.4)"
               }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1692659819033-683e4bdf096c?w=400&h=400&fit=crop"
+                src="https://media.cnn.com/api/v1/images/stellar/prod/2024-04-14t035725z-1594339199-rc2167a24z3p-rtrmadp-3-awards-breakthrough-prize.JPG?c=16x9&q=h_833,w_1480,c_fill"
                 alt="Elon Musk Portrait"
                 className="w-full h-full object-cover"
               />

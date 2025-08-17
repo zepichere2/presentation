@@ -12,7 +12,7 @@ import { ContributionsSlide } from './presentation/slides/ContributionsSlide';
 import { InspirationSlide } from './presentation/slides/InspirationSlide';
 import { ConclusionSlide } from './presentation/slides/ConclusionSlide';
 import { AchievementsSlide } from './presentation/slides/AchievementSlides';
-import { LeadershipSlide } from './presentation/slides/LeaderhipSlide';
+import { LeadershipSlide } from './presentation/slides/LeadershipSlide';
 
 
 export function ElonMuskPresentation({ deviceInfo }: PresentationProps) {
@@ -258,15 +258,15 @@ export function ElonMuskPresentation({ deviceInfo }: PresentationProps) {
   };
 
   return (
-    <div 
-      className="relative w-full h-screen overflow-hidden bg-dark-gray-950 focus:outline-none" 
-      id="presentation-container"
-      tabIndex={0}
-      onClick={() => {
-        const element = document.getElementById('presentation-container');
-        if (element) element.focus();
-      }}
-    >
+          <div 
+        className="relative w-full h-dvh overflow-hidden bg-dark-gray-950 focus:outline-none" 
+        id="presentation-container"
+        tabIndex={0}
+        onClick={() => {
+          const element = document.getElementById('presentation-container');
+          if (element) element.focus();
+        }}
+      >
       {/* Main Slide Container */}
       <div className="relative w-full h-full overflow-y-auto overflow-x-hidden invisible-scrollbar">
         <AnimatePresence mode="wait">

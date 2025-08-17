@@ -55,7 +55,7 @@ export function TitleSlide({ isActive }: SlideProps) {
             animate={isActive ? { rotateZ: [0, 5, -5, 0] } : {}}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Rocket className="w-24 h-24 text-accent-red drop-shadow-lg" />
+            <Rocket className="w-24 h-24 text-accent-red drop-shadow-lg ion-glow" />
           </motion.div>
           
           {/* Rocket Trail */}
@@ -129,7 +129,7 @@ export function TitleSlide({ isActive }: SlideProps) {
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
-              className="text-center dark-glass p-4 rounded-lg interactive-3d"
+              className="relative text-center dark-glass metal-panel p-4 rounded-lg interactive-3d scanlines accent-edge motion-soft"
               whileHover={{ 
                 scale: 1.05, 
                 boxShadow: "0 10px 30px rgba(220, 38, 38, 0.3)" 
@@ -153,9 +153,9 @@ export function TitleSlide({ isActive }: SlideProps) {
           transition={{ duration: 1, delay: 1.2 }}
         >
           <motion.button
-            className="dark-button px-8 py-3 rounded-lg responsive-text-lg font-semibold"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="dark-button px-8 py-3 rounded-lg responsive-text-lg font-semibold ion-glow-strong motion-inertia"
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.96 }}
           >
             Begin Journey
           </motion.button>
