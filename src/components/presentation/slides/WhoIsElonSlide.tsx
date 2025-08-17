@@ -162,7 +162,7 @@ export function WhoIsElonSlide({ isActive }: SlideProps) {
               }}
             >
               <ImageWithFallback
-                src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society_%28crop2%29.jpg"
+                src="https://media.cnn.com/api/v1/images/stellar/prod/2024-04-14t035725z-1594339199-rc2167a24z3p-rtrmadp-3-awards-breakthrough-prize.JPG?c=16x9&q=h_833,w_1480,c_fill"
                 alt="Elon Musk Portrait"
                 className="w-full h-full object-cover"
               />
