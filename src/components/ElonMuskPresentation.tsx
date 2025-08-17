@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Play, Pause, RotateCcw, Maximize2 } from 'lucide-react';
-import { RocketFlyby } from '@/components/RocketFlyby';
 import { PresentationProps } from './presentation/types';
 import { SLIDES_DATA, PRESENTATION_CONFIG } from './presentation/constants';
 import { TitleSlide } from './presentation/slides/TitleSlide';
@@ -259,18 +258,15 @@ export function ElonMuskPresentation({ deviceInfo }: PresentationProps) {
   };
 
   return (
-    <div 
-      className="relative w-full h-screen overflow-hidden bg-dark-gray-950 focus:outline-none" 
-      id="presentation-container"
-      tabIndex={0}
-      onClick={() => {
-        const element = document.getElementById('presentation-container');
-        if (element) element.focus();
-      }}
-    >
-      {/* Rocket Flyby on slide change */}
-      <RocketFlyby triggerKey={currentSlide} />
-
+          <div 
+        className="relative w-full h-dvh overflow-hidden bg-dark-gray-950 focus:outline-none" 
+        id="presentation-container"
+        tabIndex={0}
+        onClick={() => {
+          const element = document.getElementById('presentation-container');
+          if (element) element.focus();
+        }}
+      >
       {/* Main Slide Container */}
       <div className="relative w-full h-full overflow-y-auto overflow-x-hidden invisible-scrollbar">
         <AnimatePresence mode="wait">

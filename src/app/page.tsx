@@ -101,7 +101,7 @@ export default function App() {
 
   // Adaptive container classes based on device
   const getContainerClasses = () => {
-    const baseClasses = 'min-h-screen dark relative bg-dark-gray-950';
+    const baseClasses = 'min-h-dvh dark relative bg-dark-gray-950';
     const deviceClasses = {
       mobile: 'mobile-container',
       tablet: 'tablet-container', 
